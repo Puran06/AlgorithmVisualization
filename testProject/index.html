@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm Selection</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="/home">
+            <img src="logo.png" alt="Logo" style="width: 30px; height: 30px;"> algorithm
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link" href="#about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a id="auth-link" class="nav-link" href="http://localhost:3000/login">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <section class="container mt-5">
+        <h2 class="text-center mb-4">Choose an Algorithm</h2>
+        <div class="row justify-content-center">
+            <!-- Algorithm Cards -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-lg border-0">
+                    <img src="bubble.png" class="card-img-top" alt="Bubble Sort Visualization">
+                    <div class="card-body text-center bg-primary text-white">
+                        <h5 class="card-title fw-bold">Bubble Sort</h5>
+                        <p class="card-text">Learn how Bubble Sort works and see examples.</p>
+                        <button class="btn btn-light" onclick="navigateTo('testProject/bubbleSort/index.html')">Explore</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-lg border-0">
+                    <img src="dfs.png" class="card-img-top" alt="DFS Visualization">
+                    <div class="card-body text-center bg-success text-white">
+                        <h5 class="card-title fw-bold">DFS (Depth First Search)</h5>
+                        <p class="card-text">Explore DFS with visual examples and explanations.</p>
+                        <button class="btn btn-light" onclick="navigateTo('testProject/dfsVisualizationProject/index.html')">Explore</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-lg border-0">
+                    <img src="bfs.png" class="card-img-top" alt="BFS Visualization">
+                    <div class="card-body text-center bg-danger text-white">
+                        <h5 class="card-title fw-bold">BFS (Breadth First Search)</h5>
+                        <p class="card-text">Understand BFS algorithm with step-by-step guides.</p>
+                        <button class="btn btn-light" onclick="navigateTo('testProject/bfsVisualization1/index.html')">Explore</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-lg border-0">
+                    <img src="djkastra.png" class="card-img-top" alt="Dijkstra Algorithm Visualization">
+                    <div class="card-body text-center bg-warning text-dark">
+                        <h5 class="card-title fw-bold">Dijkstra Algorithm</h5>
+                        <p class="card-text">See how Dijkstra's algorithm finds the shortest path.</p>
+                        <button class="btn btn-light" onclick="navigateTo('testProject/dijkstraAlgorithm/index.html')">Explore</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upper Footer Section (Newsletter or Contact Info) -->
+    <section class="bg-dark text-white py-5 mt-5">
+        <div class="container text-center">
+            <h4>Stay Updated with Algorithm News</h4>
+            <p class="mb-4">Subscribe to our newsletter for the latest updates on algorithms and visualizations.</p>
+            <form class="row justify-content-center">
+                <div class="col-md-4 mb-3">
+                    <input type="email" class="form-control" placeholder="Enter your email">
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Bottom Footer Section -->
+    <footer class="bg-primary text-white py-3">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 Algorithm Portal | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function navigateTo(algorithmPage) {
+            // Redirect to the respective algorithm's index.html page
+            window.location.href = algorithmPage;
+        }
+
+
+        // Check session status when the page loads
+        window.onload = function () {
+            
+            fetch('/isLoggedIn')
+                .then(response => response.json())
+                .then(data => {
+                    const authLink = document.getElementById('auth-link');
+                    if (data.isLoggedIn) {
+                        // User is logged in, show Logout button
+                        authLink.innerText = 'Logout';
+                        authLink.href = '/logout'; // Link to the logout route
+                    } else {
+                        // User is not logged in, show Login button
+                        authLink.innerText = 'Login';
+                        authLink.href = '/login'; // Link to the login route
+                    }
+                })
+                .catch(err => {
+                    console.error('Error checking login status:', err);
+                });
+        };
+
+    </script>
+</body>
+</html>

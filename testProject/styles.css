@@ -1,0 +1,45 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+header h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+nav .nav-link {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.card {
+    border: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+}
+
+.btn {
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+section.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+footer {
+    margin-top: 50px;
+}

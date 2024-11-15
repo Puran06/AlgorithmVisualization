@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="logo.png" alt="Logo" style="width: 30px; height: 30px;"> algorithm
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link" href="#about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a id="auth-link" class="nav-link" href="http://localhost:3000/login">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+
+    <div class="container mt-5">
+        <h1>Welcome to Our Ourepage</h1>
+        <p>Algorithm visualization is a powerful method for enhancing understanding, teaching, and analyzing algorithms. It bridges the gap between theory and practice, making complex concepts accessible and engaging.</p>
+        <button class="btn btn-primary" data-toggle="collapse" data-target="#aboutContent">Read More About Us</button>
+        
+        <div id="aboutContent" class="collapse mt-3 about-section">
+            <h2>algorithm visualization</h2>
+            <p>Algorithm visualization is a valuable educational tool that simplifies complex concepts by illustrating how algorithms function.
+            <br>
+            <p> Bubble Sort is a straightforward sorting algorithm where elements are represented as bars. As adjacent elements are compared and swapped, the larger ones "bubble" to the end, clearly showing the O(n²) time complexity through visual progression.</p>
+            <br>         
+            <p>  Breadth-First Search (BFS) traverses graphs level by level. Nodes are depicted as circles connected by edges, with colors indicating their status (unvisited, visiting, visited). This visualization highlights how BFS efficiently explores all neighbors before moving deeper, effectively demonstrating its use in finding the shortest paths in unweighted graphs.</p>
+            <br>     
+            <p>Depth-First Search (DFS) explores as deeply as possible before backtracking. Its visualization uses a similar node-and-edge representation, illustrating the recursive nature of the algorithm and the stack structure involved in tracking paths.</p>
+            <br> 
+            <p>Dijkstra’s Algorithm finds the shortest path in graphs with non-negative weights. Visualizations show the growing shortest path tree, with nodes changing colors to indicate their status and distance updates. This dynamic representation emphasizes the algorithm's efficiency and practical applications in routing.</p>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-2 mt-auto">
+        <div class="container">
+            <p>&copy; Thank you for visiting my website</p>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:info@example.com" class="text-white">puran@gmail.com</a></p>
+                <p>Phone: <a href="tel:+977034567890" class="text-white">+977034567890</a></p>
+                <p>Address: koteshwor, kathmandu, nepal</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
